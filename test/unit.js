@@ -1,4 +1,5 @@
 var mod = require('../lib/index');
+var ndjson = require('ndjson');
 
 var test = require('tape');
 
@@ -9,12 +10,12 @@ test('fill in this', function (t) {
   stream.on('end', function(){
     console.log('round 2')
     var stream2 = s();
-    stream2.pipe(process.stdout)
+    stream.pipe(ndjson.serialize()).pipe(process.stdout)
 
 
   })
 
-  stream.pipe(process.stdout)
+  stream.pipe(ndjson.serialize()).pipe(process.stdout)
 
   t.ok(true)
   t.end();

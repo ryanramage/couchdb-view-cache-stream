@@ -1,6 +1,6 @@
 {
   "name": "couchdb-view-cache-stream",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "An experimental way to cache the results of a couchdb view",
   "main": "lib/index.js",
   "dependencies": {
