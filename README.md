@@ -1,6 +1,7 @@
 # couchdb-view-cache-stream
 
-WIP - nothing to see here
+An experimental way to cache the results of a couchdb view. Currently this is highly based on the needs of
+an app.
 
 ```
 npm install couchdb-view-cache-stream
