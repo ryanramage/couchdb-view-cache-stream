@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://gtihub.com/ryanramage/couchdb-view-cache-stream.git"
+    "url": "http://github.com/ryanramage/couchdb-view-cache-stream.git"
   },
-  "homepage": "http://gtihub.com/ryanramage/couchdb-view-cache-stream"
+  "homepage": "http://github.com/ryanramage/couchdb-view-cache-stream"
 }
