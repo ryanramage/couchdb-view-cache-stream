@@ -4,12 +4,15 @@
   "description": "An experimental way to cache the results of a couchdb view",
   "main": "lib/index.js",
   "dependencies": {
+    "async": "^1.5.0",
     "dev-null": "^0.1.1",
+    "from2": "^2.1.0",
     "jsonfilter": "^1.1.2",
     "levelup": "^1.2.1",
     "memdown": "^1.0.0",
     "ndjson": "^1.4.1",
     "request": "^2.58.0",
+    "standard": "^5.4.1",
     "through2": "^2.0.0"
   },
   "devDependencies": {
@@ -18,7 +21,7 @@
     "tape": "^2.14.0"
   },
   "scripts": {
-    "test": "./node_modules/.bin/jshint lib/*.js && ./node_modules/.bin/tap test/*.js"
+    "test": "standard && ./node_modules/.bin/tap test/*.js"
   },
   "repository": {
     "type": "git",
