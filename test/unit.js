@@ -10,38 +10,38 @@ var docid = 'E3331885'
 test('fill in this', function (t) {
   var cache = view_cache_stream(db + view)
 
-  async.timesSeries(10, function(n, next) {
-    run(cache, n+'', next)
+  async.timesSeries(10, function (n, next) {
+    run(cache, n + '', next)
   }, function (err) {
     t.error(err)
-    alter(db, docid, function(err) {
+    alter(db, docid, function (err) {
       t.error(err)
-      setTimeout(function(){
-        async.timesSeries(10, function(n, next) {
-          run(cache, n+'', next)
+      setTimeout(function () {
+        async.timesSeries(10, function (n, next) {
+          run(cache, n + '', next)
         }, t.end)
-      }, 5000);
+      }, 5000)
     })
   })
 })
 
-
 function run (cache, name, cb) {
   console.time(name)
-  cache(function(err, stream) {
-    stream.on('end', function() {
+  cache(function (err, stream) {
+    if (err) return cb(err)
+    stream.on('end', function () {
       console.timeEnd(name)
       cb()
     })
-    .pipe(concat(function(data){
+    .pipe(concat(function (data) {
       console.log('data')
     }))
-
   })
 }
 
 function alter (db, docid, cb) {
   couchr.get(db + '/' + docid, function (err, doc) {
+    if (err) return cb(err)
     doc['Legal Plan'] += 'A'
     couchr.put(db + '/' + docid, doc, cb)
   })
